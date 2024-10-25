@@ -5,3 +5,10 @@ The developed solution manages to sustain a throughput that closely matches the 
 despite its focus on slow port scanning, deviations caused by port scan probes do not require large periods to be identified. As such, their detection occurs practically in real-time, ensuring that actions against
 imminent threats could be taken with minimal delay. These characteristics highlight the role of data plane
 programmability in the realm of cybersecurity.
+
+# Implementations
+
+P4-CAVODE offers two distinct implementations:
+
+- **Software-Based Prototype**: A proof-of-concept implementation designed for the BMv2 software switch, allowing for easier testing and development.
+- **Hardware Deployment**: An optimized version running on the Netronome Agilio SmartNIC, providing accelerated, hardware-based processing.
