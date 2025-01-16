@@ -1,0 +1,219 @@
+{
+ "tables": [
+  {
+   "preamble": {
+    "id": 33591569,
+    "name": "table_vf_forward",
+    "alias": "table_vf_forward"
+   },
+   "matchFields": [
+    {
+     "id": 1,
+     "name": "standard_metadata.ingress_port",
+     "bitwidth": 16,
+     "matchType": "EXACT"
+    }
+   ],
+   "actionRefs": [
+    {
+     "id": 16787537
+    },
+    {
+     "id": 16800567,
+     "annotations": [
+      "@defaultonly()"
+     ]
+    }
+   ],
+   "size": "4"
+  },
+  {
+   "preamble": {
+    "id": 33614512,
+    "name": "reset_table",
+    "alias": "reset_table"
+   },
+   "matchFields": [
+    {
+     "id": 1,
+     "name": "meta.index",
+     "bitwidth": 20,
+     "matchType": "EXACT"
+    }
+   ],
+   "actionRefs": [
+    {
+     "id": 16819704
+    },
+    {
+     "id": 16800567
+    }
+   ],
+   "size": "1"
+  },
+  {
+   "preamble": {
+    "id": 33597500,
+    "name": "table_add_empty_nfp_mac_eg_cmd",
+    "alias": "table_add_empty_nfp_mac_eg_cmd"
+   },
+   "matchFields": [
+    {
+     "id": 1,
+     "name": "standard_metadata.egress_port",
+     "bitwidth": 16,
+     "matchType": "EXACT"
+    }
+   ],
+   "actionRefs": [
+    {
+     "id": 16800567
+    },
+    {
+     "id": 16821546
+    }
+   ],
+   "size": "2"
+  },
+  {
+   "preamble": {
+    "id": 33569729,
+    "name": "notification_table",
+    "alias": "notification_table"
+   },
+   "matchFields": [
+    {
+     "id": 1,
+     "name": "meta.alarm",
+     "bitwidth": 1,
+     "matchType": "EXACT"
+    }
+   ],
+   "actionRefs": [
+    {
+     "id": 16786529
+    },
+    {
+     "id": 16800567
+    }
+   ],
+   "size": "1"
+  }
+ ],
+ "actions": [
+  {
+   "preamble": {
+    "id": 16800567,
+    "name": "NoAction",
+    "alias": "NoAction"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16793430,
+    "name": "compute_hashes",
+    "alias": "compute_hashes"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16821961,
+    "name": "process_buffer",
+    "alias": "process_buffer"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16835786,
+    "name": "process_table",
+    "alias": "process_table"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16819704,
+    "name": "process_variation",
+    "alias": "process_variation"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16787537,
+    "name": "update_egress",
+    "alias": "update_egress"
+   },
+   "params": [
+    {
+     "id": 1,
+     "name": "port",
+     "bitwidth": 16
+    }
+   ]
+  },
+  {
+   "preamble": {
+    "id": 16821546,
+    "name": "add_empty_nfp_mac_eg_cmd",
+    "alias": "add_empty_nfp_mac_eg_cmd"
+   }
+  },
+  {
+   "preamble": {
+    "id": 16786529,
+    "name": "send_notification",
+    "alias": "send_notification"
+   }
+  }
+ ],
+ "externs": [
+  {
+   "externTypeId": 2550195709,
+   "externTypeName": "digest",
+   "instances": [
+    {
+     "preamble": {
+      "id": 2566953004,
+      "name": "notification_digest_t",
+      "alias": "notification_digest_t"
+     },
+     "info": {
+      "@type": "type.googleapis.com/p4.config.v1model.Digest",
+      "receiver": 1,
+      "fields": [
+       {
+        "id": 1,
+        "name": "curr_distinct",
+        "bitwidth": 20
+       },
+       {
+        "id": 2,
+        "name": "abs",
+        "bitwidth": 20
+       },
+       {
+        "id": 3,
+        "name": "variation",
+        "bitwidth": 20
+       },
+       {
+        "id": 4,
+        "name": "current_var",
+        "bitwidth": 20
+       },
+       {
+        "id": 5,
+        "name": "top",
+        "bitwidth": 32
+       },
+       {
+        "id": 6,
+        "name": "bot",
+        "bitwidth": 32
+       }
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

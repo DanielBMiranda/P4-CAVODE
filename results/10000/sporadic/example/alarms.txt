@@ -1,0 +1,19 @@
+polling for digests events
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[0] {
+    scalars.tmp_9 : 0x000eaf8f
+    scalars.tmp_10 : 0x04dd3414
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00004
+    scalars.tmp_7 : 0x00000
+    scalars.tmp_8 : 0x00117
+}
+
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[1] {
+    scalars.tmp_9 : 0x000eafca
+    scalars.tmp_10 : 0x3779abec
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00001
+    scalars.tmp_7 : 0x00000
+    scalars.tmp_8 : 0x00045
+}
+

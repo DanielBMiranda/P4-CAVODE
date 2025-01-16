@@ -1,0 +1,46 @@
+polling for digests events
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[0] {
+    scalars.tmp_9 : 0x000eb439
+    scalars.tmp_10 : 0x0e0fa002
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00004
+    scalars.tmp_7 : 0x00000
+    scalars.tmp_8 : 0x00117
+}
+
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[1] {
+    scalars.tmp_9 : 0x000eb443
+    scalars.tmp_10 : 0x109df1ee
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00001
+    scalars.tmp_7 : 0x00006
+    scalars.tmp_8 : 0x00047
+}
+
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[2] {
+    scalars.tmp_9 : 0x000eb475
+    scalars.tmp_10 : 0x0b90d0db
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00001
+    scalars.tmp_7 : 0x00000
+    scalars.tmp_8 : 0x00045
+}
+
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[3] {
+    scalars.tmp_9 : 0x000eb475
+    scalars.tmp_10 : 0x0e11007b
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00001
+    scalars.tmp_7 : 0x00002
+    scalars.tmp_8 : 0x00046
+}
+
+digest _digest_notification_digest_t_1 (P4 ID 1, P4 fieldlist field_list_2)[4] {
+    scalars.tmp_9 : 0x000eb47f
+    scalars.tmp_10 : 0x1085b98e
+    scalars.tmp_5 : 0x00004
+    scalars.tmp_6 : 0x00001
+    scalars.tmp_7 : 0x00006
+    scalars.tmp_8 : 0x00047
+}
+

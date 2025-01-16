@@ -1,0 +1,139 @@
+{
+    "tables": {
+        "egress::table_add_empty_nfp_mac_eg_cmd": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "egress::add_empty_nfp_mac_eg_cmd"
+                    }, 
+                    "name": "p0", 
+                    "match": {
+                        "standard_metadata.egress_port": {
+                            "value": "p0"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "type": "egress::add_empty_nfp_mac_eg_cmd"
+                    }, 
+                    "name": "p2", 
+                    "match": {
+                        "standard_metadata.egress_port": {
+                            "value": "p2"
+                        }
+                    }
+                }
+            ]
+        }, 
+        "ingress::table_vf_forward": {
+            "rules": [
+                {
+                    "action": {
+                        "data": {
+                            "port": {
+                                "value": "v0.0"
+                            }
+                        }, 
+                        "type": "ingress::update_egress"
+                    }, 
+                    "name": "p0_to_v0", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "p0"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "port": {
+                                "value": "p0"
+                            }
+                        }, 
+                        "type": "ingress::update_egress"
+                    }, 
+                    "name": "v0_to_p0", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.0"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "port": {
+                                "value": "v0.1"
+                            }
+                        }, 
+                        "type": "ingress::update_egress"
+                    }, 
+                    "name": "p2_to_v1", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "p2"
+                        }
+                    }
+                }, 
+                {
+                    "action": {
+                        "data": {
+                            "port": {
+                                "value": "p2"
+                            }
+                        }, 
+                        "type": "ingress::update_egress"
+                    }, 
+                    "name": "v1_to_p2", 
+                    "match": {
+                        "standard_metadata.ingress_port": {
+                            "value": "v0.1"
+                        }
+                    }
+                }
+            ], 
+            "default_rule": {
+                "action": {
+                    "data": {
+                        "port": {
+                            "value": "p0"
+                        }
+                    }, 
+                    "type": "ingress::update_egress"
+                }, 
+                "name": "default"
+            }
+        }, 
+        "ingress::reset_table": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "ingress::process_variation"
+                    }, 
+                    "name": "reset", 
+                    "match": {
+                        "scalars.metadata_t@index": {
+                            "value": "0"
+                        }
+                    }
+                }
+            ]
+        }, 
+        "egress::notification_table": {
+            "rules": [
+                {
+                    "action": {
+                        "type": "egress::send_notification"
+                    }, 
+                    "name": "notify", 
+                    "match": {
+                        "scalars.metadata_t@alarm": {
+                            "value": "1"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
